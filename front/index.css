@@ -1,0 +1,83 @@
+body{
+    height:100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+
+.header{
+    width: 100%;
+    height: 30%;
+    
+}
+h1.texto  { 
+    height: 100%;
+    display: absolute;
+    background-image: url('./img/fondo.jpg');
+    font-size: 150px;
+    text-transform: uppercase;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+ }
+
+#clasificacion{
+    height: 50%;
+    width: 100%;
+    text-transform: uppercase;
+    font-family:fantasy;
+    display: inline-flex; 
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+    font-size: 100 px;
+    
+
+}
+.contain{
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height:40%;
+    margin: 0%;
+    padding: 0%;
+    align-items: center;
+    font-family: sans-serif
+}
+ .card{
+    height: 40%;
+    width: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    margin:10px;
+}
+img.card-img-top{
+    display: inline-flex;
+    height: auto;
+    width: 100%;
+}
+
+h5.card-title{
+    width: auto;
+    height: auto;
+    color:orangered;
+    text-align: center;
+ font-size: 15px;    
+ font-family: sans-serif;
+ text-transform: uppercase;
+
+}
+.p.card-text{
+    text-align: justify;
+    font-size: 15px;
+    width: auto;
+    height: 20%;
+
+}
