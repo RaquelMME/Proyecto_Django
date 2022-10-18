@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%block titulo%}
+  Inicio
+{%endblock titulo%}
+
+{%block contenido%}
+
+    <h1 class="texto">Nosotros</h1>
+ 
+<main>   
+  <div class="contain">
+      <div class="card">
+        {% load static %}
+        <img class="card-img-top" src= "{% static 'veterinaria/img/gato/gatito6.png' %}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Gatos {{hoy}} </h5>
+          <p class="card-text">Toda la información que tenés que saber sobre tu michi</p>
+        </div>
+        </div>
+      <div class="card">
+        {%load static%}
+        <img class="card-img-top" src="{% static 'veterinaria/img/pajaros/pajarito.jpg' %}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Aves</h5>
+          <p class="card-text">Si encontraste un ave lastimada, te damos toda la información para su cuidado o a quiénes debés recurrir en estos casos de emergencia</p>
+        </div>
+        </div>
+      <div class="card">
+        {%load static%}
+        <img class="card-img-top" src="{% static 'veterinaria/img/perro/perrito.jpeg' %}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Perros</h5>
+          <p class="card-text">Todo lo que debés saber sobre tu fiel amigo para una vida plena</p>
+    </div>
+      </div>
+  </main>
+</body>
+
+{%endblock contenido%}
