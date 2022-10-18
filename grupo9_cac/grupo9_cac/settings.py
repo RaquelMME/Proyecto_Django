@@ -56,7 +56,7 @@ ROOT_URLCONF = 'grupo9_cac.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates'], #Primero viene a leer este template que esta en el directorio general
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +122,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+STATIC_ROOT = BASE_DIR / "static_root/" #Esto me sirve para correr en la parte productiva, entonces con esto se genera
+# el static root, para correrlo hacer python .\manage.py collectstatic y no olvidarse DEBUG colocar FALSE, ya que en TRUE
+#en TRUE está en modo debug.
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

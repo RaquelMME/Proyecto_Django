@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{%block titulo%}
+  Inicio
+{%endblock titulo%}
+
+{%block contenido%}
+  <section>
+    <div class="divImagenPrincipal">
+      <div class="divTituloPrincipal example">
+        <h1 class="texto">Contacto</h1>
+        <hr class="hrLinea" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="">
+      <div class="card">
+        <div class="card-header">
+          <h2>Formulario de Contacto:</h2>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label"
+                    ><span class="text-danger">*</span> <span>Nombre</span>
+                  </label>
+                  <input
+                    id="nombre"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre"
+                    aria-label="First name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="control-label"
+                    ><span class="text-danger">*</span
+                    ><span>Apellido</span></label
+                  >
+                  <input
+                    id="apellido"
+                    type="text"
+                    class="form-control"
+                    placeholder="Apellido"
+                    aria-label="Last name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"><span>E-mail</span></label>
+                  <input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="E-mail"
+                    aria-label="e-mail"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="form-group">
+                  <label class="control-label"
+                    ><span class="text-danger">*</span
+                    ><span>Usuario</span></label
+                  >
+                  <input
+                    id="nombreUsuario"
+                    type="text"
+                    class="form-control"
+                    placeholder="Usuario"
+                    aria-label="First name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="control-label"
+                    ><span class="text-danger">*</span
+                    ><span>Contraseña</span></label
+                  >
+                  <input
+                    id="password"
+                    type="password"
+                    class="form-control"
+                    id="pwd"
+                    placeholder="Contraseña"
+                    aria-label="Contraseña"
+                  />
+                </div>
+           
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label class="control-label"
+                    ><span class="text-danger"></span
+                    ><span>Mensaje</span></label
+                  >
+                  <textarea
+                    id="mensaje"
+                    placeholder="Mensaje"
+                    aria-label="Escriba-tu-mensaje"
+                    class="
+                      form-control
+                      red
+                      ng-pristine ng-untouched ng-valid ng-empty
+                    "
+                    ng-model="mensaje"
+                    name="mensaje"
+                    data-validate="required"
+                    rows="10"
+                    novalidate="novalidate"
+                    aria-invalid="false"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12" style="text-align: right;">
+            <button
+              type="button"
+              class="btn btn-primary"
+              class="btnEnviar"
+              onclick="enviarInfo()"
+            >
+              Enviar
+            </button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock contenido%}
