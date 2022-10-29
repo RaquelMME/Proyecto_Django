@@ -1,6 +1,7 @@
 from datetime import datetime
+from django.http import HttpResponse
 from django.shortcuts import render
-#Creación de las vistas
+# Creación de las vistas
 def index(request):
     #template = loader.get_template('veterinaria/index.html')
     #context = {"hoy":datetime.now}
@@ -18,3 +19,6 @@ def nosotros(request):
     #context = {"hoy":datetime.now}
     #return HttpResponse(template.render(context,request,)
     return render(request,'veterinaria/nosotros.html')
+
+def admin(request):
+    return render(request, 'admin')

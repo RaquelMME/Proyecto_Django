@@ -1,16 +1,17 @@
-{% extends 'base.html' %}
-{%block titulo%}
-  Inicio
-{%endblock titulo%}
+{% extends 'veterinaria/base.html' %}
+{% load static %}
+{% block title %}
+  Veteriango
+{% endblock title %}
 
-{%block contenido%}
+{% block content %}
 
     <h1 class="texto">Veteriango</h1>
  
 <main>   
   <div class="contain">
       <div class="card">
-        {% load static %}
+        
         <img class="card-img-top" src= "{% static 'veterinaria/img/gato/gatito6.png' %}" alt="">
         <div class="card-body">
           <h5 class="card-title">Gatos {{hoy}} </h5>
@@ -18,7 +19,7 @@
         </div>
         </div>
       <div class="card">
-        {%load static%}
+
         <img class="card-img-top" src="{% static 'veterinaria/img/pajaros/pajarito.jpg' %}" alt="">
         <div class="card-body">
           <h5 class="card-title">Aves</h5>
@@ -26,7 +27,7 @@
         </div>
         </div>
       <div class="card">
-        {%load static%}
+       
         <img class="card-img-top" src="{% static 'veterinaria/img/perro/perrito.jpeg' %}" alt="">
         <div class="card-body">
           <h5 class="card-title">Perros</h5>
@@ -144,12 +145,8 @@
     sus ojos tienen números de oro.</p>
   </div>
 
- 
-    
-
-
 
   </main>
 </body>
 
-{%endblock contenido%}
+{%endblock content%}

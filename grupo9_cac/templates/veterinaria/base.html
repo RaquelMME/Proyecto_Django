@@ -9,13 +9,9 @@
     <link rel="import" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-    <title>Veteriango</title>
-    <title>
-        {% block titulo%}
-        algo
-        {% endblock titulo %}
-    </title>
+    <script src="https://kit.fontawesome.com/b11e72e5db.js" crossorigin="anonymous"></script>
+    <title>{% block title %}Veteriango{% endblock %}</title>
+
 </head>
 <body>
      <header class="header" >
@@ -35,14 +31,18 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/">Acceso Staff</a>
+              
+            </li>
           </ul>
         </div>
       </nav>
       
     </header>
 {% comment %} Acá va el contenido {% endcomment %}
- {%block contenido%}
- {%endblock contenido%}
+ {%block content%}
+ {%endblock content%}
 </body>
 
 <footer>
