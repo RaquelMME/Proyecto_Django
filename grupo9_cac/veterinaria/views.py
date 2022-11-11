@@ -1,6 +1,13 @@
 from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Paciente
+
+
+def pacientes(request):
+    pacientes = Paciente.objects.all()
+    return render(request, "veterinaria/pacientes.html", {'pacientes': pacientes})
+
 # Creación de las vistas
 def index(request):
     #template = loader.get_template('veterinaria/index.html')

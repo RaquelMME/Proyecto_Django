@@ -28,6 +28,25 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+import os
+import json
+from django.core.exceptions import ImproperlyConfigured
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
+
+# Ruta carpeta media
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Application definition
 
@@ -38,7 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'veterinaria',
+    'veterinaria.apps.VeterinariaConfig',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +75,7 @@ ROOT_URLCONF = 'grupo9_cac.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'], # Primero viene a leer este template que esta en el directorio general
+        'DIRS': [],
         'APP_DIRS':True,
         'OPTIONS': {
             'context_processors': [
@@ -75,10 +94,15 @@ WSGI_APPLICATION = 'grupo9_cac.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+SECRET_KEY = get_secret('SECRET_KEY')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'veteriango',
+        'USER': 'postgres',
+        'PASSWORD': get_secret('DB_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -118,9 +142,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
+"""STATICFILES_DIRS = [
     BASE_DIR / "static",
-]
+]"""
 
 STATIC_ROOT = BASE_DIR / "static_root/" # Esto me sirve para correr en la parte productiva, entonces con esto se genera
 # el static root, para correrlo hacer python .\manage.py collectstatic y no olvidarse DEBUG colocar FALSE, ya que en TRUE
