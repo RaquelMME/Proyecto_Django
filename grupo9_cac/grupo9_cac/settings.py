@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,18 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 import os
-import json
-from django.core.exceptions import ImproperlyConfigured
-
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
-
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Ruta carpeta media
 
@@ -94,13 +81,12 @@ WSGI_APPLICATION = 'grupo9_cac.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-SECRET_KEY = get_secret('SECRET_KEY')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'veteriango',
         'USER': 'postgres',
-        'PASSWORD': get_secret('DB_PASSWORD'),
+        'PASSWORD': 'basededatos',
         'HOST': 'localhost',
         'PORT': '5432',
     }
