@@ -1,7 +1,7 @@
 from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Paciente
+from .models import Paciente, Familia
 
 
 def pacientes(request):

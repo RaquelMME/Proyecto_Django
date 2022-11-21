@@ -19,7 +19,7 @@ class Paciente(models.Model):
     especie = models.CharField(max_length=30, verbose_name='especie')
     raza = models.CharField(max_length=30, verbose_name='raza')
     fecha_nacimiento = models.DateField(verbose_name='fecha_nacimiento')
-    foto = models.ImageField(upload_to = 'pacientes')
+    foto = models.ImageField(verbose_name = 'foto', upload_to = 'pacientes')
     peso = models.FloatField(verbose_name='peso')
     fecha_visita = models.DateField(auto_now_add=True, verbose_name='fecha_visita')
     comentarios = models.TextField(max_length=255)

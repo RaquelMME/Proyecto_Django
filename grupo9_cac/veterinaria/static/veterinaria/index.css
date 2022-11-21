@@ -30,6 +30,8 @@ h1.texto{
     -webkit-text-fill-color: transparent;
  }
 
+ 
+
 div.contain{
     display: flex;
     width: 100%;

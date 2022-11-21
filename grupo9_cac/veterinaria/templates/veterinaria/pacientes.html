@@ -4,5 +4,17 @@
 {% endblock title %}
 
 {% block content %}
-<h1 class="texto">Conozca a nuestros visitantes</h1>
+<h1 class="texto">Nuestros visitantes</h1>
+{% for paciente in pacientes %}
+  <div class="container" style="width: 18rem">
+    <div class="row">
+      <div class="col-sm">
+        <img class="img-fluid" src="{{ paciente.foto.url }}" alt="foto">
+        <p>{{ paciente.nombre }}</p>
+      </div>    
+    </div>
+  </div>
+{% endfor %}
+           
+
 {% endblock content %}
