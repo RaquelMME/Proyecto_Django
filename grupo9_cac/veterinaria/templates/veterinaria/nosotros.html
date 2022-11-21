@@ -1,8 +1,23 @@
-{% extends 'veterinaria/base.html' %}
-{% block title %}
- Nosotros
-{% endblock title %}
+{% extends 'veterinaria/base.html' %} 
+{% load static %}
+{% block title %} Nosotros {% endblock title %}
 
 {% block content %}
+
 <h1 class="texto">Nosotros</h1>
+<div class="container">
+    <img class="card-img" src= "{% static 'veterinaria/img/nosotros.jpeg' %}" alt="nosotros">
+        <div class="card-body">
+          <p class="card-text">¡Bienvenidos! Veteriango fue creado con el objetivo de brindar el más completo
+            servicio médico veterinario, con la premisa de lograr el máximo bienestar de su
+            mascota. El respeto y la contención hacia el paciente y su familia son nuestros
+            pilares fundacionales. Contamos con la infraestructura, tecnología y el nivel
+            profesional y humano acorde. Nuestra principal herrramienta es el ejercicio de
+            la medicina preventiva. Los chequeos de rutina nos permiten diagnosticar y
+            prevenir distintas enfermedades, mejorando así los pronósticos y aumentando la
+            expectativa y la calidad de vida de nuestros pacientes.</p>
+        </div>
+</div>
+
+
 {% endblock content %}
