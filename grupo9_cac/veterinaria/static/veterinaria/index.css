@@ -120,6 +120,7 @@ p.card-text{
 .oda{
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 footer{
     color: #fff;
@@ -133,4 +134,12 @@ i{
     font-size: 25px;
     padding: auto;
     align-items: space-between;
+}
+
+.container{
+    width: 790px !important;
+    display: inline-grid !important;
+    align-items:center;
+    justify-items: center;
+    justify-content: space-around !important;
 }
